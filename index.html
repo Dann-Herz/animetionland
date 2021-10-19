@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* CONTADOR -----------------------------------------------------------INICIO>>> */
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      counter-reset: game;
+    }
+
+    input[type=checkbox] {
+      top: 5px;
+      left: -3px;
+      width: 80px;
+      height: 80px;
+      appearance: none;
+      z-index: 5;
+      position: absolute;
+    }
+
+    input[type=checkbox]:checked {
+      counter-increment: game;
+    }
+    .total-count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      position: absolute;
+      bottom: 15px;
+      z-index: 11;
+
+    }
+    .total-count::after {
+      content: counter(game)
+    }
+
+    /* CONTADOR -----------------------------------------------------------FINAL>>> */
+
+    .phone {
+      position: relative;
+      border: 8px solid black;
+      border-radius: 40px;
+      height: 600px;
+      width: 300px;
+      background: #CCEFFF;
+      box-shadow: 0 19px 38px rgb(0, 0, 0, 0.3), 
+      0 15px 12px rgb(0, 0, 0, 0.22);
+    }
+    .logo {
+      display: flex;
+      width: 100%;
+      
+      justify-content: center;
+      justify-items: center;
+
+    }
+
+    .logo img {
+      width: 220px;
+      margin-top: 20px;
+    } 
+    /* ABRIR Y CERRAR OJOS ----------------------------------------------------INICIO>>>> */
+    .fumofu {
+      width: 80px;
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .fumofu-close {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      z-index: 1;
+      animation-name: blink;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes blink {
+      0% {
+        z-index: 1;
+      }
+      5% {
+        z-index: 3;
+      }
+      10% {
+        z-index: 1;
+      }
+    }
+    /* ABRIR Y CERRAR OJOS ----------------------------------------------------INICIO>>>> */
+
+    .layer-1{
+      position: absolute;
+      z-index: 1;
+      height: 490px;
+      width: 80px;
+      bottom: 0;
+      right: 60px; 
+      animation-name: botarga1;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+    @keyframes botarga1 {
+      0% {
+        height: 490px;
+      }
+      50% {
+        height: 300px;
+      }
+      100% {
+        height: 490px;
+      }
+    }
+    .layer-1:hover > .fumofu-close {
+      z-index: 3;
+    }
+
+    .layer-2{
+      position: absolute;
+      z-index: 2;
+      height: 458px;
+      width: 80px;
+      bottom: 0;
+      left : 60px; 
+      animation: botarga2 2s ease-in-out infinite;
+    }
+    
+    @keyframes botarga2 {
+      0% {
+        height: 458px;
+      }
+      25% {
+        height: 348px;
+      }
+      50% {
+        height: 478px;
+      }
+      75% {
+        height: 348px;
+      }
+      100% {
+        height: 458px;
+      }
+    }
+
+    .layer-2:hover > .fumofu-close {
+      z-index: 3;
+    }
+    .layer-3{ 
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 220px;
+      height: 400px;
+
+      bottom: 0;
+    }
+    .building1 {
+      width: 220px;
+    }
+    .layer-4{
+      position: absolute;
+      z-index: 5;
+      height: 350px;
+      width: 80px;
+
+      bottom: 0;
+      left: 30px; 
+      animation: botarga3 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes botarga3 {
+      0% {
+        height: 350px;
+      }
+      25% {
+        height: 300px;
+      }
+      50% {
+        height: 360px;
+      }
+      75% {
+        height: 300px;
+      }
+      100% {
+        height: 350px;
+      }
+    }
+    .layer-4:hover > .fumofu-close {
+      z-index: 3;
+    }
+    .layer-5{
+      position: absolute;
+      z-index: 6;
+      left: 0;
+      margin: 0 auto;
+      width: 180px;
+      height: 300px;
+
+      bottom: 0;
+    }
+    .building2 {
+      width: 180px;
+    }
+    .layer-6{
+      position: absolute;
+      z-index: 7;
+      height: 263px;
+      width: 80px;
+      bottom: 0;
+      right: 50px; 
+      animation: botarga4 3s ease-in-out infinite;
+    }
+    @keyframes botarga4 {
+      0% {
+        height: 263px;
+      }
+      50% {
+        height: 200px;
+      }
+      100% {
+        height: 263px;
+      }
+    }
+    .layer-6:hover > .fumofu-close {
+      z-index: 3;
+    }
+    .layer-7{
+      position: absolute;
+      z-index: 8;
+      right: 0;
+      margin: 0 0;
+      width: 180px;
+      height: 200px;
+
+      bottom: 0;
+    }
+    .building3 {
+      width: 180px;
+    }
+    .layer-8{
+      position: absolute;
+      z-index: 9;
+      left: 0;
+      margin: 0 0;
+      border-radius: 0 0 35px 35px;
+      width: 300px;
+      height: 120px;
+      background: rgb(126, 125, 123);
+      bottom: 0;
+    }
+   .layer-9{
+     position: absolute;
+     z-index: 10;
+     left: 0px;
+     margin: 0 0;
+     border-radius: 0 0 0 35px;
+     width: 164px;
+     height: 100px;
+     background: rgb(233, 223, 204);
+     bottom: 0;
+    }
+    .layer-10{
+     position: absolute;
+     z-index: 10;
+     right: 0px;
+     margin: 0 0;
+     border-radius: 0 0 35px 0;
+     width: 106px;
+     height: 100px;
+     background: rgb(190, 183, 168);
+     bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <!-- <div class="logo">
+      <img src="./logo.png" alt="logo">
+    </div> -->
+    <div class="layer-1">
+      <input type="checkbox">
+      <img class="fumofu" src="./fumofu.png" alt="">
+      <img class="fumofu-close" src="./fumofu-close.png" alt="">
+    </div> <!-- fumoffu 1 -->
+    <div class="layer-2">
+      <input type="checkbox">
+      <img class="fumofu" src="./fumofu.png" alt="">
+      <img class="fumofu-close" src="./fumofu-close.png" alt="">
+    </div> <!-- fumoffu 2 -->
+    <div class="layer-3">
+      <img class="building1" src="./building1.png" alt="">
+    </div> <!-- wall 1 -->
+
+
+    <div class="layer-4">
+      <input type="checkbox">
+      <img class="fumofu" src="./fumofu.png" alt="">
+      <img class="fumofu-close" src="./fumofu-close.png" alt="">
+    </div> <!-- fumoffu 3 -->
+    <div class="layer-5">
+      <img class="building2" src="./building2.png" alt="">
+    </div> <!-- wall 2 -->
+
+
+    <div class="layer-6">
+      <input type="checkbox">
+      <img class="fumofu" src="./fumofu.png" alt="">
+      <img class="fumofu-close" src="./fumofu-close.png" alt="">
+    </div> <!-- fumoffu 4 -->
+    <div class="layer-7">
+      <img class="building3" src="./building3.png" alt="">
+    </div> <!-- wall 3 -->
+
+
+    <div class="layer-8"></div> <!-- lawn 1 -->
+    <div class="layer-9"></div> <!-- lawn 2 -->
+   <div class="layer-10"></div> <!-- lawn 3 -->
+   <h3 class="total-count">Score de Fumoffu: </h3>
+  </div>
+</body>
+</html>
